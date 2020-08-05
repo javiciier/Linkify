@@ -1,34 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:linkify/router.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
-  @override
+@override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: HomePage(),
-    );
-  }
-}
-
-
-class HomePage extends StatelessWidget {
-  
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(""),
-      ),
-      body: Container()
+      onGenerateRoute: Router.generateRoute,    // Cuando se genera una ruta nueva se llama a esta función
+      initialRoute: Router.login,              // Ruta inicial por defecto
+      debugShowCheckedModeBanner: false,
     );
   }
 }
