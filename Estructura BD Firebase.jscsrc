@@ -4,15 +4,15 @@
     // USUARIO
     {
         "usuarios": [
-            "idUser1" : {           // IDUsuario
+            "idUser1" : {           // IDUsuario (generado por firebase)
                 "usuario":          "benitoCamela",
                 "nombre":           "Javier",
                 "apellido1":        "Cancela",
                 "apellido2":        "Mato",
                 "clave":            "Clave cifrada",
                 "email":            "email@dominio.net",
-                "foto":             "Contenido de la foto",
-                "fecha_registro":   "fecha de registro"
+                "fotoPerfil":             "Contenido de la foto",
+                "fechaRegistro":   "fecha de registro"
             },
             "idUser2" : {           // IDUsuario
                 "usuario":          "Juse",
@@ -21,8 +21,8 @@
                 "apellido2":        "Romero",
                 "clave":            "Clave cifrada",
                 "email":            "email@dominio.net",
-                "foto":             "Contenido de la foto",
-                "fecha_registro":   "fecha de registro"
+                "fotoPerfil":             "Contenido de la foto",
+                "fechaRegistro":   "fecha de registro"
             }
         ]
     },
@@ -30,16 +30,16 @@
     // CATEGORÍA
     {
         "categorias": [
-            "idCategoria1" : {      // IDCategoria
+            "idCategoria1" : {      // IDCategoria (generado por firebase)
                 "nombre":           "Nombre de la categoría",
                 "descripcion":      "Texto de descripción",
-                "fecha_creacion":   "fecha de creación",
+                "fechaCreacion":   "fecha de creación",
                 "autor":            "idUserX"   // IDUsuariod que creó la categoría
             },
             "idCategoria2" : {      // IDCategoria
                 "nombre":           "Nombre de la categoría",
                 "descripcion":      "Texto de descripción",
-                "fecha_creacion":   "fecha de creación",
+                "fechaCreacion":   "fecha de creación",
                 "autor":            "idUserX"   // IDUsuariod que creó la categoría
             }
         ]

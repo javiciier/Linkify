@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:linkify/router.dart';
+import 'package:linkify/src/Views/LoginScreens/Routes/router.dart';
 
 void main() {
   runApp(MyApp());
