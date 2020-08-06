@@ -1,0 +1,51 @@
+// Estructura general de la BD en Firebase.
+// Cada objeto dentro del array se corresponderá con un documento independiente.
+[
+    // USUARIO
+    {
+        "usuarios": [
+            "idUser1" : {           // IDUsuario
+                "usuario":          "benitoCamela",
+                "nombre":           "Javier",
+                "apellido1":        "Cancela",
+                "apellido2":        "Mato",
+                "clave":            "Clave cifrada",
+                "email":            "email@dominio.net",
+                "foto":             "Contenido de la foto",
+                "fecha_registro":   "fecha de registro"
+            },
+            "idUser2" : {           // IDUsuario
+                "usuario":          "Juse",
+                "nombre":           "José",
+                "apellido1":        "Cancela",
+                "apellido2":        "Romero",
+                "clave":            "Clave cifrada",
+                "email":            "email@dominio.net",
+                "foto":             "Contenido de la foto",
+                "fecha_registro":   "fecha de registro"
+            }
+        ]
+    },
+
+    // CATEGORÍA
+    {
+        "categorias": [
+            "idCategoria1" : {      // IDCategoria
+                "nombre":           "Nombre de la categoría",
+                "descripcion":      "Texto de descripción",
+                "fecha_creacion":   "fecha de creación",
+                "autor":            "idUserX"   // IDUsuariod que creó la categoría
+            },
+            "idCategoria2" : {      // IDCategoria
+                "nombre":           "Nombre de la categoría",
+                "descripcion":      "Texto de descripción",
+                "fecha_creacion":   "fecha de creación",
+                "autor":            "idUserX"   // IDUsuariod que creó la categoría
+            }
+        ]
+    }
+
+    
+]
+
+
