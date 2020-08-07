@@ -1,21 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:linkify/src/Views/LoginScreens/Widgets/accessButton.dart';
+import 'package:linkify/util/constants.dart';
+import 'package:linkify/src/Views/LoginScreens/Widgets/keys.dart';
+import 'package:linkify/src/Views/Routes/router.dart';
 
 class LoginLandingPage extends StatelessWidget{
   static final double _buttonHeightScaleFactor = 0.06;
   static final double _buttonWidthScaleFactor = 0.80;
+
+  // Keys para identificar unívocamente los botones
+  static const Key iniciarSesionButtonKey = Key(Keys.iniciarSesionButtonKey);
+  static const Key registrarseButtonKey = Key(Keys.registraseButtonKey);
 
   LoginLandingPage();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(0Xf2, 0Xe5, 0Xd7, 1.0),
+      // backgroundColor: Color.fromRGBO(0Xf2, 0Xe5, 0Xd7, 1.0),
       body: Container(
         alignment: Alignment.center,
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
-            // _buildBackgroundImage(context),
+            _buildBackgroundImage(context),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -32,6 +40,7 @@ class LoginLandingPage extends StatelessWidget{
   }
 
 
+  // ignore: unused_element
   Widget _buildBackgroundImage(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height,
@@ -46,6 +55,7 @@ class LoginLandingPage extends StatelessWidget{
   }
 
   Widget _buildLogo() {
+    // TODO: Crear logotipo .png y mostrarlo aquí
     return Text(
       "Linkify",
       textScaleFactor: 4.5,
@@ -73,52 +83,33 @@ class LoginLandingPage extends StatelessWidget{
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         _buildLoginButton(context),
-        SizedBox(height: 20),
+        SizedBox(height: Constants.buttonsDistance),
         _buildRegisterButton(context)
       ],
     );
   }
 
   Widget _buildLoginButton(BuildContext context) {
-    return ButtonTheme(
-      height: MediaQuery.of(context).size.height * _buttonHeightScaleFactor,
-      minWidth: MediaQuery.of(context).size.width * _buttonWidthScaleFactor,
-      child: RaisedButton(
-        child: Text(
-          "Iniciar sesión",
-          style: TextStyle(
-            fontFamily: 'Roboto',
-            color: Colors.white,
-            fontSize: 20
-          )
-        ),
-        color: Color.fromRGBO(0xE5, 0x59, 0x34, 1),
-        elevation: 10,
-        splashColor: Color.fromRGBO(0XBA, 0X3B, 0X18, 1),
-        onPressed: () => print("INICIAR SESIÓN pulsado"),
-      ),
+    String texto = "Iniciar sesión";
+    return new AccessButton(
+      key: iniciarSesionButtonKey,
+      text: texto,
+      textColor: Colors.white,
+      buttonColor: Color.fromRGBO(0xE5, 0x59, 0x34, 1),
+      // onPressedCallback: () => print("Botón \"$texto\" pulsado")
+      onPressedCallback: () => Navigator.of(context).pushNamed(Routes.login),
     );
   }
 
     Widget _buildRegisterButton(BuildContext context) {
-    return ButtonTheme(
-      height: MediaQuery.of(context).size.height * _buttonHeightScaleFactor,
-      minWidth: MediaQuery.of(context).size.width * _buttonWidthScaleFactor,
-      child: RaisedButton(
-        child: Text("Registrarse",
-        style: TextStyle(
-            fontFamily: 'Roboto',
-            color: Colors.white,
-            fontSize: 20
-          )
-        ),
+      String texto = "Registrarse";
+      return new AccessButton(
+        key: iniciarSesionButtonKey,
+        text: texto,
         textColor: Colors.white,
-        color: Color.fromRGBO(0xE5, 0x59, 0x34, 1),
-        elevation: 10,
-        splashColor: Color.fromRGBO(0XBA, 0X3B, 0X18, 1),
-        onPressed: () => print("REGISTRARSE pulsado"),
-      ),
-    );
+        buttonColor: Color.fromRGBO(0xE5, 0x59, 0x34, 1),
+        onPressedCallback: () => print("Botón \"$texto\" pulsado")  // TODO: Implementar pantalla Registrarse
+      );
   }
 
 

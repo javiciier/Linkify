@@ -1,10 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:meta/meta.dart';
-import 'package:linkify/util/Formatting.dart';
+import 'package:linkify/util/constants.dart';
 
-@inmutable
 class Usuario {
   /// Clase que representa a un usuario de la aplicación
   // ignore: non_constant_identifier_names
@@ -63,7 +61,7 @@ class Usuario {
     // Obtiene la fecha de registro
     int fecha = jsonData['fechaRegistro'];
     DateTime fechaEnMS = DateTime.fromMillisecondsSinceEpoch(fecha);
-    DateTime fechaRegistro = new DateFormat(Formatting.dateFormat).format(fechaEnMS) as DateTime;
+    DateTime fechaRegistro = new DateFormat(Constants.dateFormat).format(fechaEnMS) as DateTime;
     if (fechaRegistro == null) return null;
 
     return new Usuario(
@@ -78,17 +76,20 @@ class Usuario {
       fechaRegistro: fechaRegistro);
   }
 
-  Map<String, dynamic> toJSON() => {
-      'idUsuario' = this.idUsuario,
-      'usuario' = this.usuario,
-      'nombre' = this.nombre,
-      'apellido1' = this.apellido1,
-      'apellido2' = this.apellido2,
-      'clave' = this.clave,
-      'email' = this.email,
-      'fotoPerfil' = this.fotoPerfil.toString(),
-      'fechaRegistro' = this.fechaRegistro.toString()
-    };
+  Map<String, dynamic> toJSON() {
+      Map json = new Map<String, dynamic>();
+      json['idUsuario']      = this.idUsuario;
+      json['usuario']        = this.usuario;
+      json['nombre']         = this.nombre;
+      json['apellido1']      = this.apellido1;
+      json['apellido2']      = this.apellido2;
+      json['clave']          = this.clave;
+      json['email']          = this.email;
+      json['fotoPerfil']     = this.fotoPerfil.toString();
+      json['fechaRegistro']  = this.fechaRegistro.toString();
+
+      return json;
+    }
 
 
   @override
@@ -96,14 +97,13 @@ class Usuario {
 
   @override
   bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-    if (runtimeType != other.runtimeType) return false;
-    final Usuario other = other;
-    return
-      this.idUsuario == other.idUsuario
-      && this.usuario == other.usuario
-      && this.nombre == other.nombre
-      && this.fechaRegistro == other.fechaRegistro;
+    return (
+      other is Usuario
+      && other.idUsuario == this.idUsuario
+      && other.usuario == this.usuario
+      && other.nombre == this.nombre
+      && other.fechaRegistro == this.fechaRegistro
+    );
   }
 
   @override
