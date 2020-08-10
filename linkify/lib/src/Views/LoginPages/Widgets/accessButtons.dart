@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:linkify/util/constants.dart';
 
-class AccessButton extends StatelessWidget {
+class AccessButtonWidget extends StatelessWidget {
   final String text;
   final Color textColor;
   final Color buttonColor;
@@ -10,7 +10,7 @@ class AccessButton extends StatelessWidget {
   
 
   /// Constructor
-  AccessButton({
+  AccessButtonWidget({
     Key key,
     @required this.text,
     @required this.textColor,

@@ -46,6 +46,7 @@ flutter:
   assets:
     - assets/background-image.png
     - assets/default-user-profile-photo-placeholder.png
+    - assets/google_logo.png
 
 
 

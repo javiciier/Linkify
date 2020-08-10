@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:linkify/src/Views/LoginScreens/loginLandingPage.dart';
-import 'package:linkify/src/Views/LoginScreens/loginPage.dart';
+import 'package:linkify/src/Views/LoginPages/loginLandingPage.dart';
+import 'package:linkify/src/Views/LoginPages/loginPage.dart';
 
 
 /// Clase encargada de enlazar las distintas rutas de la aplicación con sus respecivas vistas.

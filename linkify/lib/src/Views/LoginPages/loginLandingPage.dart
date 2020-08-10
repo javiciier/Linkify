@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:linkify/src/Views/LoginScreens/Widgets/accessButton.dart';
 import 'package:linkify/util/constants.dart';
-import 'package:linkify/src/Views/LoginScreens/Widgets/keys.dart';
+import 'package:linkify/src/Views/LoginPages/Widgets/keys.dart';
 import 'package:linkify/src/Views/Routes/router.dart';
+import 'package:linkify/src/Views/LoginPages/Widgets/backgroundImage.dart';
+import 'package:linkify/src/Views/LoginPages/Widgets/appLogo.dart';
+import 'package:linkify/src/Views/LoginPages/Widgets/accessButtons.dart';
+
+
 
 class LoginLandingPage extends StatelessWidget{
   static final double _buttonHeightScaleFactor = 0.06;
@@ -18,57 +22,41 @@ class LoginLandingPage extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: Color.fromRGBO(0Xf2, 0Xe5, 0Xd7, 1.0),
-      body: Container(
-        alignment: Alignment.center,
-        child: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            _buildBackgroundImage(context),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                _buildLogo(),
-                _buildIntroductionText(context),
-                _buildButtons(context)
-              ],
-            )
-          ],
-        ),
-      ),
+      body: _buildBody(context),
     );
   }
 
 
-  // ignore: unused_element
-  Widget _buildBackgroundImage(BuildContext context) {
+  Widget _buildBody(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height,
-      width: MediaQuery.of(context).size.height,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/background-image.png"),
-          fit: BoxFit.cover
-        )
+      alignment: Alignment.center,
+      child: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          _buildBackgroundImage(context),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              _buildLogo(),
+              _buildWelcomeText(context),
+              _buildButtons(context)
+            ],
+          )
+        ],
       ),
     );
   }
 
-  Widget _buildLogo() {
-    // TODO: Crear logotipo .png y mostrarlo aquí
-    return Text(
-      "Linkify",
-      textScaleFactor: 4.5,
-      style: TextStyle(
-        color: Color.fromRGBO(0xFF, 0xC9, 0x05, 1),
-        fontSize: 20
-      )
-    );
-  }
 
-  Widget _buildIntroductionText(BuildContext context) {
+  Widget _buildBackgroundImage(BuildContext context) => BackgroundImageWidget();
+
+  Widget _buildLogo() => AppLogoWidget();
+
+  Widget _buildWelcomeText(BuildContext context) {
+    String texto = "Tu gestor de enlaces favorito";
     return Text(
-      "Tu gestor de enlaces favorito",
+      texto,
       textScaleFactor: 1.1,
       textAlign: TextAlign.center,
       style: TextStyle(
@@ -91,7 +79,7 @@ class LoginLandingPage extends StatelessWidget{
 
   Widget _buildLoginButton(BuildContext context) {
     String texto = "Iniciar sesión";
-    return new AccessButton(
+    return new AccessButtonWidget(
       key: iniciarSesionButtonKey,
       text: texto,
       textColor: Colors.white,
@@ -103,7 +91,7 @@ class LoginLandingPage extends StatelessWidget{
 
     Widget _buildRegisterButton(BuildContext context) {
       String texto = "Registrarse";
-      return new AccessButton(
+      return new AccessButtonWidget(
         key: iniciarSesionButtonKey,
         text: texto,
         textColor: Colors.white,

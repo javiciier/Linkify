@@ -1,5 +1,10 @@
 /// Clase que contiene formatos de Strings, fechas, etc.
 class Constants {
+  // WIDGETS
+  static double widgetsDefaultDistance = 15.0;
+  static const double basePadding = 10.0;
+
+
   // FORMATOS (para fechas, textos, etc)
   static String dateFormat = "dd/MM/yyyy";
 
