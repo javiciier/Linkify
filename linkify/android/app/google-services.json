@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "275384066936",
+    "firebase_url": "https://linkify-72e97.firebaseio.com",
+    "project_id": "linkify-72e97",
+    "storage_bucket": "linkify-72e97.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275384066936:android:a1fa13c26bf2cee83a1e8d",
+        "android_client_info": {
+          "package_name": "com.javicii.linkify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "275384066936-738eeeeu1g6r0ib1u094jrtotg6lulg0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2bF-6lu-p71E0mZzhuEC2gjT8IajmPaw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "275384066936-738eeeeu1g6r0ib1u094jrtotg6lulg0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
